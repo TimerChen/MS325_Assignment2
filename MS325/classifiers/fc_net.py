@@ -185,9 +185,9 @@ class FullyConnectedNet(object):
             self.params['W%d'%(i+1)] = np.random.normal(0.0, weight_scale, size=[layer_input_dim, hd])
             self.params['b%d'%(i+1)] = np.zeros([hd])
             layer_input_dim = hd
-#             if self.use_batchnorm:
-#                 self.params['gamma%d'%(i+1)] = 
-#                 self.params['beta%d'%(i+1)] = 
+            if self.use_batchnorm:
+                self.params['gamma%d'%(i+1)] = np.ones([hd])
+                self.params['beta%d'%(i+1)] = np.zeros([hd])
 
         self.params['W%d'%(self.num_layers)] = np.random.normal(0.0, weight_scale, size=[layer_input_dim, num_classes])
         self.params['b%d'%(self.num_layers)] = np.zeros([num_classes])
@@ -252,17 +252,20 @@ class FullyConnectedNet(object):
         ar_cache = {}
         a_cache = {}
         dp_cache = {}
+        bn_cache = {}
     
         for lay in range(self.num_layers-1):
+            layer_input, a_cache[lay] = affine_forward(layer_input, self.params['W%d'%(lay+1)], self.params['b%d'%(lay+1)])
             if self.use_batchnorm:
-#                 layer_input, ar_cache[lay] = 
-                pass
-            else:
-                layer_input, a_cache[lay] = affine_forward(layer_input, self.params['W%d'%(lay+1)], self.params['b%d'%(lay+1)])
-                layer_input, ar_cache[lay] = relu_forward(layer_input)
+                layer_input, bn_cache[lay] = batchnorm_forward(layer_input, 
+                                                               self.params['gamma%d'%(lay+1)], 
+                                                               self.params['beta%d'%(lay+1)], 
+                                                               self.bn_params[lay])
+            layer_input, ar_cache[lay] = relu_forward(layer_input)
+                
             
-#             if self.use_dropout:
-#                 layer_input, dp_cache[lay] = 
+            if self.use_dropout:
+                layer_input, dp_cache[lay] = dropout_forward(layer_input, self.dropout_param)
             
         ar_out, a_cache[self.num_layers-1] = affine_forward(layer_input, 
                                                              self.params['W%d'%(self.num_layers)], 
@@ -303,20 +306,18 @@ class FullyConnectedNet(object):
             lay = self.num_layers - 2 - idx
             W = self.params['W%d'%(lay+1)]
             loss += 0.5* self.reg * np.sum(W * W)
-            drelu = relu_backward(dhout, ar_cache[lay])
             if self.use_dropout:
-#                 dhout = 
-                pass
+                dhout = dropout_backward(dhout, dp_cache[lay])
+            dhout = relu_backward(dhout, ar_cache[lay])
             if self.use_batchnorm:
-#                 dx, dw, db, dgamma, dbeta = 
-                pass
-            else:
-                dx, dw, db = affine_backward(drelu, a_cache[lay])
+                dbn, dgamma, dbeta = batchnorm_backward_alt(dhout, bn_cache[lay])
+                
+            dx, dw, db = affine_backward(dhout, a_cache[lay])
             grads['W%d'%(lay+1)] = dw + self.reg * W
             grads['b%d'%(lay+1)] = db
-#             if self.use_batchnorm:
-#                 grads['gamma%d'%(lay+1)] = 
-#                 grads['beta%d'%(lay+1)] = 
+            if self.use_batchnorm:
+                grads['gamma%d'%(lay+1)] = dgamma
+                grads['beta%d'%(lay+1)] = dbeta
             dhout = dx
         ############################################################################
         #                             END OF YOUR CODE                             #

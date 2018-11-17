@@ -4,11 +4,11 @@
 {
     "distutils": {
         "depends": [
-            "/home/timer/code/DeepLearning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h",
-            "/home/timer/code/DeepLearning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include/numpy/ufuncobject.h"
+            "/home/timemachine/code/Deep Learning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h",
+            "/home/timemachine/code/Deep Learning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include/numpy/ufuncobject.h"
         ],
         "include_dirs": [
-            "/home/timer/code/DeepLearning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include"
+            "/home/timemachine/code/Deep Learning/assignment2/.env/lib/python3.6/site-packages/numpy/core/include"
         ]
     },
     "module_name": "im2col_cython"
@@ -2128,7 +2128,7 @@ static const char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C cont
 static const char __pyx_k_Expected_at_least_d_arguments[] = "Expected at least %d arguments";
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
 static const char __pyx_k_strided_and_direct_or_indirect[] = "<strided and direct or indirect>";
-static const char __pyx_k_home_timer_code_DeepLearning_as[] = "/home/timer/code/DeepLearning/assignment2/MS325/im2col_cython.pyx";
+static const char __pyx_k_home_timemachine_code_Deep_Lear[] = "/home/timemachine/code/Deep Learning/assignment2/MS325/im2col_cython.pyx";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
 static const char __pyx_k_unknown_dtype_code_in_numpy_pxd[] = "unknown dtype code in numpy.pxd (%d)";
 static const char __pyx_k_Buffer_view_does_not_expose_stri[] = "Buffer view does not expose strides";
@@ -2210,7 +2210,7 @@ static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_fortran;
 static PyObject *__pyx_n_u_fortran;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
-static PyObject *__pyx_kp_s_home_timer_code_DeepLearning_as;
+static PyObject *__pyx_kp_s_home_timemachine_code_Deep_Lear;
 static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_im2col_cython;
 static PyObject *__pyx_n_s_import;
@@ -23104,7 +23104,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 0, 1, 1},
   {&__pyx_n_u_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 1, 0, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
-  {&__pyx_kp_s_home_timer_code_DeepLearning_as, __pyx_k_home_timer_code_DeepLearning_as, sizeof(__pyx_k_home_timer_code_DeepLearning_as), 0, 0, 1, 0},
+  {&__pyx_kp_s_home_timemachine_code_Deep_Lear, __pyx_k_home_timemachine_code_Deep_Lear, sizeof(__pyx_k_home_timemachine_code_Deep_Lear), 0, 0, 1, 0},
   {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_im2col_cython, __pyx_k_im2col_cython, sizeof(__pyx_k_im2col_cython), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
@@ -23553,7 +23553,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__49 = PyTuple_Pack(14, __pyx_n_s_x, __pyx_n_s_field_height, __pyx_n_s_field_width, __pyx_n_s_padding, __pyx_n_s_stride, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_p, __pyx_n_s_x_padded, __pyx_n_s_cols); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__49);
   __Pyx_GIVEREF(__pyx_tuple__49);
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(5, 0, 14, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timer_code_DeepLearning_as, __pyx_n_s_im2col_cython, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(5, 0, 14, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timemachine_code_Deep_Lear, __pyx_n_s_im2col_cython, 12, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "MS325/im2col_cython.pyx":57
  * 
@@ -23565,7 +23565,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__51 = PyTuple_Pack(13, __pyx_n_s_cols, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_field_height, __pyx_n_s_field_width, __pyx_n_s_padding, __pyx_n_s_stride, __pyx_n_s_x, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_x_padded); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__51);
   __Pyx_GIVEREF(__pyx_tuple__51);
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timer_code_DeepLearning_as, __pyx_n_s_col2im_cython, 57, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timemachine_code_Deep_Lear, __pyx_n_s_col2im_cython, 57, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(0, 57, __pyx_L1_error)
 
   /* "MS325/im2col_cython.pyx":109
  * 
@@ -23577,7 +23577,7 @@ static int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__53 = PyTuple_Pack(13, __pyx_n_s_cols, __pyx_n_s_N, __pyx_n_s_C, __pyx_n_s_H, __pyx_n_s_W, __pyx_n_s_HH, __pyx_n_s_WW, __pyx_n_s_pad, __pyx_n_s_stride, __pyx_n_s_x, __pyx_n_s_out_h, __pyx_n_s_out_w, __pyx_n_s_x_padded); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(0, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__53);
   __Pyx_GIVEREF(__pyx_tuple__53);
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timer_code_DeepLearning_as, __pyx_n_s_col2im_6d_cython, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(9, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_home_timemachine_code_Deep_Lear, __pyx_n_s_col2im_6d_cython, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(0, 109, __pyx_L1_error)
 
   /* "View.MemoryView":282
  *         return self.name

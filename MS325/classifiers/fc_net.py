@@ -310,7 +310,7 @@ class FullyConnectedNet(object):
                 dhout = dropout_backward(dhout, dp_cache[lay])
             dhout = relu_backward(dhout, ar_cache[lay])
             if self.use_batchnorm:
-                dbn, dgamma, dbeta = batchnorm_backward_alt(dhout, bn_cache[lay])
+                dhout, dgamma, dbeta = batchnorm_backward_alt(dhout, bn_cache[lay])
                 
             dx, dw, db = affine_backward(dhout, a_cache[lay])
             grads['W%d'%(lay+1)] = dw + self.reg * W

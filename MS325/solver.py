@@ -297,10 +297,16 @@ class Solver(object):
 
                 # Keep track of the best model
                 if val_acc > self.best_val_acc:
+                    print('new acc:', val_acc)
+                    
                     self.best_val_acc = val_acc
                     self.best_params = {}
+                    if hasattr(self.model,'bn_params'):
+                        self.best_bn_params = [i.copy() for i in self.model.bn_params]
                     for k, v in self.model.params.items():
                         self.best_params[k] = v.copy()
 
         # At the end of training swap the best params into the model
         self.model.params = self.best_params
+        if hasattr(self.model,'bn_params'):
+            self.model.bn_params = self.best_bn_params
